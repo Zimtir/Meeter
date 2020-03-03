@@ -42,3 +42,5 @@ mix deps.get
 # like npm run build
 mix deps.compile
 ```
+
+#### Start to investigate a minimal HTTP2 server
