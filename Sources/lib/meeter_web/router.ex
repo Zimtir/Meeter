@@ -17,6 +17,7 @@ defmodule MeeterWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
+    get "/auth", AuthController, :index
   end
 
   # Other scopes may use custom stacks.
