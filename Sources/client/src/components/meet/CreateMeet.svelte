@@ -1,6 +1,10 @@
 <script>
   import Box from '../common/Box.svelte'
   import Button from '../common/Button.svelte'
+
+  import TimePicker from 'svelte-touch-timepicker'
+  let time = new Date()
+  $: _time = time.toLocaleTimeString('en-US')
 </script>
 
 <style>
@@ -14,12 +18,9 @@
 
 <Box>
   <h3 class="title">Create a new meet</h3>
-  <Button>
-    <h3>SELECT CATEGORY</h3>
-  </Button>
-  <Button icon={'calendar'}>
-    <h3>SELECT TIME</h3>
-  </Button>
+
+  <TimePicker classes="time-picker" bind:time />
+
   <Button color={'green'}>
     <h3>Create</h3>
   </Button>

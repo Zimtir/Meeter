@@ -8,5 +8,4 @@
 </style>
 
 <CreateMeet />
-
-<MeetList />
+<!-- <MeetList /> -->

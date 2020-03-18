@@ -1,5 +1,5 @@
 <script>
-  export let color = ''
+  export let color = 'default'
   export let icon = ''
 
   const getIcon = () => {
@@ -9,24 +9,34 @@
 
 <style>
   .button {
-    height: 80px;
-    width: 150px;
-    margin: 10px;
+    position: relative;
+    white-space: nowrap;
+    background-image: none;
     border-radius: 4px;
-    border-color: dimgray;
+    box-shadow: none;
+    padding: 5px 12px;
+    text-shadow: none;
+    margin-right: 7px;
+    min-width: 100px;
+    max-width: 250px;
+    flex-wrap: wrap;
+    margin-bottom: 7px;
+    cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
   }
 
   .button.green {
-    background: darkgreen;
-    color: white;
+    background-color: #fff;
+    border: solid 1px #04a49c;
+    color: #04a49c;
   }
 
-  .button.red {
-    background: red;
-    color: white;
+  .button.default {
+    background-color: #fff;
+    border: solid 1px #fff;
+    color: #000;
   }
 </style>
 
