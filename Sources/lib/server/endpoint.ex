@@ -33,7 +33,7 @@ defmodule Server.Endpoint do
     end
   end
 
-  forward("/test", to: Router)
+  forward("/", to: Router)
 
   match _ do
     conn
