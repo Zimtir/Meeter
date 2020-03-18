@@ -25,7 +25,8 @@
     "start:dev": "sirv public --dev",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "lint": "tslint -p tsconfig.json",
-    "upd-all": "npm outdated && ncu -u && npm update && npm install"
+    "upd-all": "npm outdated && ncu -u && npm update && npm install",
+    "fontello": "fontello-cli install --config ./fontello.config.json --css ./public/assets/css --font ./public/assets/font"
   },
   "dependencies": {
     "prettier": "^1.19.1",
