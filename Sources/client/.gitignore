@@ -2,3 +2,6 @@ node_modules
 public/bundle.*
 package-lock.json
 .rpt2_cache
+public/assets/css/f*.css
+public/assets/css/animation.css
+public/assets/font/

@@ -1,5 +1,10 @@
 <script>
-  export let color
+  export let color = ''
+  export let icon = ''
+
+  const getIcon = () => {
+    return icon.length > 0 ? `icon-${icon}` : ''
+  }
 </script>
 
 <style>
@@ -22,6 +27,6 @@
   }
 </style>
 
-<button class={`button ${color}`}>
+<button class={`button ${color} ${getIcon()}`}>
   <slot />
 </button>

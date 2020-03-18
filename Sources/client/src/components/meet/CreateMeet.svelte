@@ -33,7 +33,7 @@
   <Button>
     <h3>SELECT CATEGORY</h3>
   </Button>
-  <Button>
+  <Button icon={'calendar'}>
     <h3>SELECT TIME</h3>
   </Button>
   <Button color={'green'}>
