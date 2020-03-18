@@ -14,6 +14,9 @@
     margin: 10px;
     border-radius: 4px;
     border-color: dimgray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .button.green {
