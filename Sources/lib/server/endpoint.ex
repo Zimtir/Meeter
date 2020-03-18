@@ -4,7 +4,7 @@ defmodule Server.Endpoint do
   use Plug.ErrorHandler
 
   alias Server.Router
-  alias Plug.{Adapters.Cowboy2, HTML}
+  alias Plug.{Cowboy, HTML}
 
   require Logger
 
@@ -29,7 +29,7 @@ defmodule Server.Endpoint do
   def start_link(_opts) do
     with {:ok, [port: port] = config} <- config() do
       Logger.info("Starting server at http://localhost:#{port}/")
-      Cowboy2.http(__MODULE__, [], config)
+      Cowboy.http(__MODULE__, [], config)
     end
   end
 
