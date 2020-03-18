@@ -17,7 +17,7 @@
 </style>
 
 <Box>
-  <h3 class="title">Create a new meet</h3>
+  <h3 class="title icon-calendar">Create a new meet</h3>
 
   <TimePicker classes="time-picker" bind:time />
 
