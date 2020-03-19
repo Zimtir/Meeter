@@ -29,6 +29,7 @@
     "fontello": "fontello-cli install --config ./fontello.config.json --css ./public/assets/css --font ./public/assets/font"
   },
   "dependencies": {
+    "node-crud-kit": "^1.0.8",
     "prettier": "^1.19.1",
     "svelte-spinner": "^2.0.2",
     "svelte-touch-timepicker": "^1.0.0",
