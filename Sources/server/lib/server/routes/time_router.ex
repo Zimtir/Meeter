@@ -7,14 +7,14 @@ defmodule Server.TimeRouter do
   @content_type "application/json"
   Storage.Server.start_link()
 
-  get "/add" do
+  post "/add" do
     conn
     |> put_resp_content_type(@content_type)
     |> send_resp(
       200,
       Poison.encode!(%{
         response_type: "success",
-        message: Storage.Server.put(:store, "time", 18)
+        message: Storage.Server.put(:store, "time", conn.body_params["time"])
       })
     )
   end

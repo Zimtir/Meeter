@@ -41,6 +41,6 @@ defmodule Storage.Server do
 
   def handle_call({:put, key, value}, _from, state) do
     new_state = Map.put(state, key, value)
-    {:reply, value, new_state[key]}
+    {:reply, value, new_state}
   end
 end

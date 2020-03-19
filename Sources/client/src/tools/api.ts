@@ -5,7 +5,9 @@ const server = 'http://localhost:4000/api'
 
 export default class Api {
   static addTime = async (time: Date) => {
-    const result = await RequestTool.fetchJson(`${server}/time/add`)
+    const result = await RequestTool.fetchPostJson(`${server}/time/add`, {
+      time: time,
+    })
     LoggerTool.log(result)
     return result
   }
