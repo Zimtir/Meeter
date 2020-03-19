@@ -19,7 +19,7 @@ defmodule Server.Router do
   defp message do
     Poison.encode!(%{
       response_type: "success",
-      text: "Test message"
+      message: "Test message"
     })
   end
 end

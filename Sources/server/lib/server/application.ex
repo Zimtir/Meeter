@@ -8,7 +8,8 @@ defmodule Server.Application do
 
   defp children do
     [
-      Endpoint
+      Endpoint,
+      Storage.Application
     ]
   end
 
