@@ -20,7 +20,9 @@
   <h3 class="title icon-calendar">Create a new meet</h3>
 
   <TimePicker classes="time-picker" bind:time />
-  <button class="button green" on:click={() => swal('Good job!', 'You clicked the button!', 'success')}>
+  <button
+    class="button green"
+    on:click={() => swal('Good job!', `Time ${time.toLocaleTimeString('en-US')} has been added!`, 'success')}>
     <h3>Create</h3>
   </button>
 
