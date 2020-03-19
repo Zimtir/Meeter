@@ -34,7 +34,8 @@ defmodule Server.Endpoint do
     end
   end
 
-  forward("/", to: Router)
+  forward("/api/router", to: Router)
+  forward("/api/time", to: Server.TimeRouter)
 
   defp config, do: Application.fetch_env(:server, __MODULE__)
 

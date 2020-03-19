@@ -12,7 +12,7 @@ defmodule Storage.Server do
   end
 
   def put(store, key, value) do
-    GenServer.cast(store, {:put, key, value})
+    GenServer.call(store, {:put, key, value})
   end
 
   def delete(store, key) do
@@ -39,8 +39,8 @@ defmodule Storage.Server do
     {:reply, value, new_state}
   end
 
-  def handle_cast({:put, key, value}, state) do
+  def handle_call({:put, key, value}, _from, state) do
     new_state = Map.put(state, key, value)
-    {:reply, value, new_state}
+    {:reply, value, new_state[key]}
   end
 end
