@@ -3,9 +3,5 @@
   import MeetList from './components/meet/MeetList.svelte'
 </script>
 
-<style>
-
-</style>
-
 <CreateMeet />
 <!-- <MeetList /> -->

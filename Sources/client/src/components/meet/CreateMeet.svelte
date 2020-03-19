@@ -1,8 +1,8 @@
 <script>
   import Box from '../common/Box.svelte'
-  import Button from '../common/Button.svelte'
 
   import TimePicker from 'svelte-touch-timepicker'
+  import swal from 'sweetalert'
   let time = new Date()
   $: _time = time.toLocaleTimeString('en-US')
 </script>
@@ -20,8 +20,8 @@
   <h3 class="title icon-calendar">Create a new meet</h3>
 
   <TimePicker classes="time-picker" bind:time />
-
-  <Button color={'green'}>
+  <button class="button green" on:click={() => swal('Good job!', 'You clicked the button!', 'success')}>
     <h3>Create</h3>
-  </Button>
+  </button>
+
 </Box>
