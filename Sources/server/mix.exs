@@ -24,7 +24,8 @@ defmodule Server.MixProject do
       {:plug, "~> 1.9"},
       {:cowboy, "~> 2.7"},
       {:plug_cowboy, "~> 2.1.2"},
-      {:credo, "~> 0.10.2", except: :prod, runtime: false}
+      {:credo, "~> 0.10.2", except: :prod, runtime: false},
+      {:cors_plug, "~> 1.5"}
     ]
   end
 end

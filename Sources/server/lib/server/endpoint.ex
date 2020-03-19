@@ -4,12 +4,13 @@ defmodule Server.Endpoint do
   use Plug.ErrorHandler
 
   alias Server.Router
-  alias Plug.{Cowboy, HTML}
+  alias Plug.{Cowboy}
 
   require Logger
 
   plug(Plug.Logger, log: :debug)
   plug(:match)
+  plug(CORSPlug, origin: "*")
 
   plug(Plug.Parsers,
     parsers: [:json],
@@ -35,21 +36,7 @@ defmodule Server.Endpoint do
 
   forward("/", to: Router)
 
-  match _ do
-    conn
-    |> put_resp_header("location", redirect_url())
-    |> put_resp_content_type("text/html")
-    |> send_resp(302, redirect_body())
-  end
-
-  defp redirect_body do
-    ~S(<html><body>You are being <a href=")
-    |> Kernel.<>(HTML.html_escape(redirect_url()))
-    |> Kernel.<>(~S(">redirected</a>.</body></html>))
-  end
-
   defp config, do: Application.fetch_env(:server, __MODULE__)
-  defp redirect_url, do: Application.get_env(:server, :redirect_url)
 
   def handle_errors(%{status: status} = conn, %{kind: _kind, reason: _reason, stack: _stack}),
     do: send_resp(conn, status, "Something went wrong")
